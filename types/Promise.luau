@@ -213,6 +213,7 @@ type _AnyPromise = {
 		A...
 	) -> any,
 	andThenReturn: <T2...>(self: PromiseLike<...any>, T2...) -> any,
+	await: (self: PromiseLike<...any>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<...any>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<...any>,
