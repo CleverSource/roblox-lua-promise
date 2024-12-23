@@ -15,6 +15,7 @@ type PromiseExhausted = {
 		A...
 	) -> PromiseExhausted,
 	andThenReturn: <T2...>(self: PromiseLike<...any>, T2...) -> PromiseExhausted,
+	await: (self: PromiseLike<...any>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<...any>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<...any>,
@@ -37,6 +38,7 @@ type Promise8<T...> = {
 		A...
 	) -> PromiseExhausted,
 	andThenReturn: <T2...>(self: PromiseLike<T...>, T2...) -> PromiseExhausted,
+	await: (self: PromiseLike<T...>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<T...>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<T...>,
@@ -59,6 +61,7 @@ type Promise7<T...> = {
 		A...
 	) -> Promise8<T2...>,
 	andThenReturn: <T2...>(self: PromiseLike<T...>, T2...) -> Promise8<T2...>,
+	await: (self: PromiseLike<T...>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<T...>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<T...>,
@@ -81,6 +84,7 @@ type Promise6<T...> = {
 		A...
 	) -> Promise7<T2...>,
 	andThenReturn: <T2...>(self: PromiseLike<T...>, T2...) -> Promise7<T2...>,
+	await: (self: PromiseLike<T...>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<T...>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<T...>,
@@ -103,6 +107,7 @@ type Promise5<T...> = {
 		A...
 	) -> Promise6<T2...>,
 	andThenReturn: <T2...>(self: PromiseLike<T...>, T2...) -> Promise6<T2...>,
+	await: (self: PromiseLike<T...>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<T...>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<T...>,
@@ -125,6 +130,7 @@ type Promise4<T...> = {
 		A...
 	) -> Promise5<T2...>,
 	andThenReturn: <T2...>(self: PromiseLike<T...>, T2...) -> Promise5<T2...>,
+	await: (self: PromiseLike<T...>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<T...>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<T...>,
@@ -147,6 +153,7 @@ type Promise3<T...> = {
 		A...
 	) -> Promise4<T2...>,
 	andThenReturn: <T2...>(self: PromiseLike<T...>, T2...) -> Promise4<T2...>,
+	await: (self: PromiseLike<T...>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<T...>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<T...>,
@@ -169,6 +176,7 @@ type Promise2<T...> = {
 		A...
 	) -> Promise3<T2...>,
 	andThenReturn: <T2...>(self: PromiseLike<T...>, T2...) -> Promise3<T2...>,
+	await: (self: PromiseLike<T...>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<T...>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<T...>,
@@ -191,6 +199,7 @@ type Promise1<T...> = {
 		A...
 	) -> Promise2<T2...>,
 	andThenReturn: <T2...>(self: PromiseLike<T...>, T2...) -> Promise2<T2...>,
+	await: (self: PromiseLike<T...>) -> (boolean, ...any),
 	cancel: (self: PromiseLike<T...>) -> (),
 	catch: <T2...>(
 		self: PromiseLike<T...>,
