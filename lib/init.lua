@@ -2,6 +2,8 @@
 	An implementation of Promises similar to Promise/A+.
 ]]
 
+local task = require("@lune/task")
+
 local ERROR_NON_PROMISE_IN_LIST = "Non-promise value passed into %s at index %s"
 local ERROR_NON_LIST = "Please pass a list of promises to %s"
 local ERROR_NON_FUNCTION = "Please pass a handler function to %s!"
@@ -221,7 +223,6 @@ local Promise = {
 	Error = Error,
 	Status = makeEnum("Promise.Status", { "Started", "Resolved", "Rejected", "Cancelled" }),
 	_getTime = os.clock,
-	_timeEvent = game:GetService("RunService").Heartbeat,
 	_unhandledRejectionCallbacks = {},
 }
 Promise.prototype = {}
@@ -1732,7 +1733,7 @@ function Promise.prototype:_reject(...)
 		local err = tostring((...))
 
 		coroutine.wrap(function()
-			Promise._timeEvent:Wait()
+			task.wait()
 
 			-- Someone observed the error, hooray!
 			if not self._unhandledRejection then
